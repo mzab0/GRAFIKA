@@ -633,6 +633,13 @@ function Tick()
   0,0,0,1
   ];
   
+  let uMVRotX2 = [
+  1,0,0,0,
+  0,-Math.cos(angleX*Math.PI/180.0),-Math.sin(angleX*Math.PI/180.0),0,
+  0,+Math.sin(angleX*Math.PI/180.0),-Math.cos(angleX*Math.PI/180.0),0,
+  0,0,0,1
+  ];
+  
   let uMVTranslateZ = [
   1,0,0,0,
   0,1,0,0,
@@ -813,7 +820,7 @@ function Tick()
   
   uMVMatrix3 = MatrixMul(uMVMatrix3,uMVScale3);
   uMVMatrix3 = MatrixMul(uMVMatrix3,uMVObject3);
-  uMVMatrix3 = MatrixMul(uMVMatrix3,uMVRotX);
+  uMVMatrix3 = MatrixMul(uMVMatrix3,uMVRotX2);
   uMVMatrix3 = MatrixMul(uMVMatrix3,uMVRotY);
   uMVMatrix3 = MatrixMul(uMVMatrix3,uMVRotZ);
   uMVMatrix3 = MatrixMul(uMVMatrix3,uMVTranslateZ);
